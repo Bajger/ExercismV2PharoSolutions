@@ -5,8 +5,19 @@ Class {
 }
 
 { #category : #baselines }
-BaselineOfExercismV2PharoSolutions >> baseline: spec [ 
-
+BaselineOfExercismV2PharoSolutions >> baseline: spec [
 	<baseline>
-	spec for: #common do: [ spec package: 'ExercismV2PharoSolutions' ]
+	spec
+		for: #common
+		do: [ spec
+				package: 'ExercismV2PharoSolutions'
+				with: [ spec requires: #('Exercism') ] ]
+]
+
+{ #category : #dependencies }
+BaselineOfExercismV2PharoSolutions >> exercismBaseline: spec [
+	spec
+		baseline: 'Exercism'
+		with:
+			[ spec repository: 'github://exercism/pharo-smalltalk/releases/latest' ]
 ]
