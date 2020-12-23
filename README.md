@@ -4,7 +4,7 @@ This is my Exercism v2 solutions of Pharo track.
 You can load this project into stable Pharo 8.0 (P9 untested) image using:  
 ```
 Metacello new
-	repository: 'github://Bajger/ExercismV2PharoSolutions/src';
+	repository: 'github://Bajger/ExercismV2PharoSolutions:main/src';
 	baseline: 'ExercismV2PharoSolutions';
 	load
 ```
