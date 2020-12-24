@@ -20,6 +20,13 @@ BaselineOfExercismV2PharoSolutions >> baseline: spec [
 BaselineOfExercismV2PharoSolutions >> exercismBaseline: spec [
 	spec
 		baseline: 'Exercism'
-		with:
-			[ spec repository: 'github://exercism/pharo-smalltalk/releases/latest' ]
+			with:
+				[ spec repository: 'github://exercism/pharo-smalltalk/releases/latest' ];
+		project: 'ExercismExercises'
+			copyFrom: 'Exercism'
+			with: [ spec
+				loads:
+					(self class environment
+						at: #BaselineOfExercism
+						ifPresent: [ :exeClass | exeClass exercisePackageNames ]) ]
 ]
